@@ -108,12 +108,26 @@ hy3（无前缀）             →  走面板里设置的「默认渠道」
 
 ## 安装
 
+### 第 0 步：获取代码
+
+```bash
+git clone https://github.com/kuroshio4396/SillyTavern-CodeBuddy-WorkBuddy-Bridge.git
+cd SillyTavern-CodeBuddy-WorkBuddy-Bridge
+```
+
+不想用 git 的话，点本页右上角 **Code → Download ZIP** 再解压，效果一样。
+下面所有命令都假定当前目录是**仓库根目录**。
+
+---
+
 要装的是**两个**部分，缺一不可：
 
 | 部分 | 源目录 | 目标位置 |
 |---|---|---|
 | 服务器插件 | `server-plugin/` | `<SillyTavern>/plugins/cbwb-bridge/` |
 | 前端扩展 | `ui-extension/` | `<SillyTavern>/public/scripts/extensions/third-party/cbwb-bridge/` |
+
+> ⚠️ **不能只用 SillyTavern 的「从 URL 安装扩展」**——那只会装上前端部分，服务器插件（代理本体）仍需按下面步骤拷贝。
 
 ### 方式一：脚本安装（推荐）
 
