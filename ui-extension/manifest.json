@@ -1,0 +1,12 @@
+{
+  "display_name": "CodeBuddy / WorkBuddy 桥接",
+  "loading_order": 90,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "css": "style.css",
+  "author": "SillyTavern CBWB Bridge contributors",
+  "version": "1.1.0",
+  "auto_update": false,
+  "minimum_client_version": "1.12.0"
+}

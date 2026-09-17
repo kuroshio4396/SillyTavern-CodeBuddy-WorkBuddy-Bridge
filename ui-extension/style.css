@@ -1,0 +1,338 @@
+/* CodeBuddy / WorkBuddy 桥接面板样式 */
+
+.cbwb-root .cbwb-hint {
+    font-size: 0.85em;
+    opacity: 0.8;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.cbwb-root .cbwb-small {
+    font-size: 0.78em;
+}
+
+.cbwb-root code {
+    background: rgba(127, 127, 127, 0.15);
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-size: 0.92em;
+    word-break: break-all;
+}
+
+.cbwb-card {
+    border: 1px solid rgba(127, 127, 127, 0.28);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    background: rgba(127, 127, 127, 0.06);
+}
+
+.cbwb-card-connect {
+    border-color: rgba(80, 140, 255, 0.45);
+    background: rgba(80, 140, 255, 0.07);
+}
+
+.cbwb-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.cbwb-card-title {
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.cbwb-badge {
+    font-size: 0.75em;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: rgba(127, 127, 127, 0.22);
+    white-space: nowrap;
+}
+
+.cbwb-badge.cbwb-ok {
+    background: rgba(60, 170, 90, 0.25);
+    color: inherit;
+}
+
+.cbwb-badge.cbwb-bad {
+    background: rgba(200, 70, 70, 0.25);
+}
+
+.cbwb-badge.cbwb-warn {
+    background: rgba(210, 160, 40, 0.28);
+}
+
+.cbwb-kv {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.82em;
+    line-height: 1.7;
+}
+
+.cbwb-kv .cbwb-k {
+    flex: 0 0 34%;
+    opacity: 0.72;
+}
+
+.cbwb-kv .cbwb-v {
+    flex: 1 1 auto;
+    min-width: 0;
+    word-break: break-all;
+}
+
+.cbwb-select {
+    width: 100%;
+    max-width: 100%;
+}
+
+.cbwb-btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 9px;
+}
+
+.cbwb-btn {
+    font-size: 0.8em;
+    padding: 4px 10px;
+    white-space: nowrap;
+}
+
+.cbwb-btn.cbwb-btn-primary {
+    border-color: rgba(80, 140, 255, 0.7);
+}
+
+.cbwb-btn.cbwb-busy {
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.cbwb-snapshot {
+    margin: 8px 0;
+    padding: 7px 9px;
+    border-left: 3px solid rgba(127, 127, 127, 0.5);
+    background: rgba(127, 127, 127, 0.08);
+    border-radius: 4px;
+    font-size: 0.78em;
+}
+
+.cbwb-snapshot-title {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.cbwb-snapshot-body {
+    opacity: 0.85;
+    line-height: 1.6;
+    word-break: break-all;
+}
+
+.cbwb-warn {
+    font-size: 0.78em;
+    margin-top: 6px;
+    color: #b45309;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.cbwb-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.cbwb-channel {
+    border: 1px solid rgba(127, 127, 127, 0.28);
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: rgba(127, 127, 127, 0.06);
+}
+
+.cbwb-login-pending {
+    font-size: 0.78em;
+    margin-top: 7px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background: rgba(80, 140, 255, 0.14);
+    line-height: 1.55;
+}
+
+.cbwb-login-pending a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cbwb-model-groups {
+    max-height: 340px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.cbwb-model-group-title {
+    font-size: 0.8em;
+    font-weight: 600;
+    opacity: 0.85;
+    margin: 8px 0 4px;
+    position: sticky;
+    top: 0;
+    background: inherit;
+    padding: 2px 0;
+}
+
+.cbwb-model-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78em;
+    line-height: 1.9;
+    padding: 0 2px;
+}
+
+.cbwb-model-row:hover {
+    background: rgba(127, 127, 127, 0.1);
+    border-radius: 3px;
+}
+
+.cbwb-model-row input[type="checkbox"] {
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+.cbwb-model-id {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cbwb-model-meta {
+    flex: 0 0 auto;
+    opacity: 0.55;
+    font-size: 0.92em;
+}
+
+.cbwb-footer {
+    margin-top: 4px;
+    opacity: 0.62;
+}
+
+/* ── 积分 / 用量 ── */
+
+.cbwb-card-credits {
+    border-color: rgba(60, 170, 90, 0.4);
+    background: rgba(60, 170, 90, 0.06);
+}
+
+.cbwb-credits {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.cbwb-credit-block {
+    border: 1px solid rgba(127, 127, 127, 0.24);
+    border-radius: 6px;
+    padding: 7px 9px;
+    background: rgba(127, 127, 127, 0.05);
+}
+
+.cbwb-credit-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.cbwb-credit-name {
+    font-size: 0.84em;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cbwb-credit-total {
+    font-size: 1.05em;
+    font-weight: 700;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.cbwb-credit-total .cbwb-credit-unit {
+    font-size: 0.62em;
+    font-weight: 400;
+    opacity: 0.6;
+    margin-left: 2px;
+}
+
+.cbwb-credit-sub {
+    font-size: 0.74em;
+    opacity: 0.72;
+    line-height: 1.6;
+    margin-top: 2px;
+}
+
+.cbwb-credit-unavailable {
+    font-size: 0.78em;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.cbwb-credit-detail {
+    margin-top: 5px;
+    font-size: 0.74em;
+}
+
+.cbwb-credit-detail > summary {
+    cursor: pointer;
+    opacity: 0.8;
+    outline: none;
+}
+
+.cbwb-credit-pkg {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-top: 4px;
+    padding-left: 6px;
+    border-left: 2px solid rgba(127, 127, 127, 0.35);
+    line-height: 1.75;
+}
+
+.cbwb-credit-pkg .cbwb-pkg-dead {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.cbwb-credit-pkg .cbwb-pkg-remain {
+    font-variant-numeric: tabular-nums;
+}
+
+.cbwb-checkin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+    padding-top: 5px;
+    border-top: 1px dashed rgba(127, 127, 127, 0.3);
+    font-size: 0.76em;
+}
+
+.cbwb-checkin .cbwb-checkin-text {
+    opacity: 0.85;
+    line-height: 1.5;
+}
+
+.cbwb-credit-inline {
+    font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,113 @@
+<div class="cbwb-root">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>CodeBuddy / WorkBuddy 桥接</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+            <div class="cbwb-hint">
+                通过本地 OpenAI 兼容代理，把 <b>CodeBuddy（腾讯）</b> 与 <b>WorkBuddy（国际版）</b>
+                两条渠道接入 SillyTavern 的 <code>Custom (OpenAI-compatible)</code> 源。
+                代理地址：<code class="cbwb-proxy-url">检测中…</code>
+            </div>
+
+            <!-- ── 代理状态 ── -->
+            <div class="cbwb-card">
+                <div class="cbwb-card-head">
+                    <span class="cbwb-card-title">本地代理</span>
+                    <span class="cbwb-badge" id="cbwb_proxy_badge">检测中…</span>
+                </div>
+                <div class="cbwb-kv">
+                    <span class="cbwb-k">端点</span>
+                    <span class="cbwb-v"><code id="cbwb_proxy_url">-</code></span>
+                </div>
+                <div class="cbwb-kv">
+                    <span class="cbwb-k">默认渠道</span>
+                    <span class="cbwb-v">
+                        <select id="cbwb_default_channel" class="text_pole cbwb-select">
+                            <option value="codebuddy">CodeBuddy（腾讯）</option>
+                            <option value="workbuddy">WorkBuddy（国际版）</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="cbwb-btn-row">
+                    <div class="menu_button cbwb-btn" id="cbwb_refresh_all"><i class="fa-solid fa-rotate"></i> 刷新状态</div>
+                    <div class="menu_button cbwb-btn" id="cbwb_refresh_catalog"><i class="fa-solid fa-list"></i> 重拉模型目录</div>
+                    <div class="menu_button cbwb-btn" id="cbwb_copy_url"><i class="fa-solid fa-copy"></i> 复制端点</div>
+                </div>
+            </div>
+
+            <!-- ── 积分 / 用量 ── -->
+            <div class="cbwb-card cbwb-card-credits">
+                <div class="cbwb-card-head">
+                    <span class="cbwb-card-title">积分 / 用量</span>
+                    <span class="cbwb-badge" id="cbwb_credits_badge">读取中…</span>
+                </div>
+                <div class="cbwb-hint cbwb-small">
+                    剩余额度取账户的<b>本周期</b>口径，已失效的资源包不计入（单独列出以免数字虚高）。
+                    数值仅供用量参考，实际扣费以上游为准。
+                </div>
+                <div class="cbwb-credits" id="cbwb_credits"></div>
+                <div class="cbwb-btn-row">
+                    <div class="menu_button cbwb-btn" id="cbwb_credits_refresh"><i class="fa-solid fa-rotate"></i> 刷新积分</div>
+                </div>
+            </div>
+
+            <!-- ── 接入 / 恢复（方案 A：快照 + 一键切换） ── -->
+            <div class="cbwb-card cbwb-card-connect">
+                <div class="cbwb-card-head">
+                    <span class="cbwb-card-title">接入 SillyTavern</span>
+                    <span class="cbwb-badge" id="cbwb_connect_badge">读取中…</span>
+                </div>
+                <div class="cbwb-kv">
+                    <span class="cbwb-k">当前源</span>
+                    <span class="cbwb-v"><code id="cbwb_current_source">-</code></span>
+                </div>
+                <div class="cbwb-kv">
+                    <span class="cbwb-k">当前 custom_url</span>
+                    <span class="cbwb-v"><code id="cbwb_current_url">-</code></span>
+                </div>
+                <div class="cbwb-kv">
+                    <span class="cbwb-k">当前 custom_model</span>
+                    <span class="cbwb-v"><code id="cbwb_current_model">-</code></span>
+                </div>
+                <div class="cbwb-snapshot" id="cbwb_snapshot_box">
+                    <div class="cbwb-snapshot-title">原连接快照</div>
+                    <div class="cbwb-snapshot-body" id="cbwb_snapshot_body">尚未建立快照。首次点「接入本地桥接」时会自动记录原配置。</div>
+                </div>
+                <div class="cbwb-kv">
+                    <span class="cbwb-k">接入后使用的模型</span>
+                    <span class="cbwb-v">
+                        <select id="cbwb_connect_model" class="text_pole cbwb-select"></select>
+                    </span>
+                </div>
+                <div class="cbwb-btn-row">
+                    <div class="menu_button cbwb-btn cbwb-btn-primary" id="cbwb_apply"><i class="fa-solid fa-plug"></i> 接入本地桥接</div>
+                    <div class="menu_button cbwb-btn" id="cbwb_restore"><i class="fa-solid fa-rotate-left"></i> 恢复原连接</div>
+                </div>
+                <div class="cbwb-warn" id="cbwb_apply_warn"></div>
+            </div>
+
+            <!-- ── 两个渠道 ── -->
+            <div class="cbwb-channels" id="cbwb_channels"></div>
+
+            <!-- ── 模型清单 ── -->
+            <div class="cbwb-card">
+                <div class="cbwb-card-head">
+                    <span class="cbwb-card-title">模型显隐</span>
+                    <span class="cbwb-badge" id="cbwb_models_badge">-</span>
+                </div>
+                <div class="cbwb-hint cbwb-small">
+                    黑名单制：默认全部显示，只有被取消勾选的模型会从 SillyTavern 的模型下拉里消失。
+                    新模型上线无需任何配置。
+                </div>
+                <div class="cbwb-model-groups" id="cbwb_model_groups"></div>
+            </div>
+
+            <div class="cbwb-hint cbwb-small cbwb-footer">
+                本扩展不修改 SillyTavern 源码，只读写它自己的设置项。
+                桥接服务端为 <code>plugins/cbwb-bridge</code>，凭据存放在 <code>data/cbwb-bridge/</code>。
+            </div>
+        </div>
+    </div>
+</div>
