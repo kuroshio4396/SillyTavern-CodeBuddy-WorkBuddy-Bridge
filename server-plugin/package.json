@@ -1,0 +1,23 @@
+{
+  "name": "cbwb-bridge",
+  "version": "1.1.0",
+  "private": true,
+  "description": "SillyTavern server plugin: CodeBuddy / WorkBuddy OpenAI-compatible bridge",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node selftest.cjs"
+  },
+  "devDependencies": {
+    "express": "^4.19.2"
+  },
+  "keywords": [
+    "sillytavern",
+    "sillytavern-plugin",
+    "codebuddy",
+    "workbuddy",
+    "openai-compatible",
+    "proxy"
+  ],
+  "license": "MIT"
+}
