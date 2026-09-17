@@ -1,0 +1,27 @@
+# ── 凭据与运行期数据（绝对不要提交）──
+data/
+credentials.json
+config.json
+*.token
+*.secret
+.env
+.env.*
+
+# ── 依赖 ──
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# ── 编辑器 / 系统垃圾 ──
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+
+# ── 备份与临时产物 ──
+*.bak
+*.orig
+_backup-*/
+*.log
